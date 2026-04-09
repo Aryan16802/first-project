@@ -1,0 +1,6 @@
+streamlit>=1.38
+pydantic>=2.7
+fastapi>=0.115
+uvicorn>=0.30
+beautifulsoup4>=4.12
+playwright>=1.47

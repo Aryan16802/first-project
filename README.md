@@ -352,6 +352,13 @@ Notes:
 - Loads `GROQ_API_KEY` and `GROQ_MODEL` from environment (or local `.env` file).
 - Keeps the same dark chat layout style with selected-funds panel and source/freshness metadata.
 
+### Streamlit Cloud Deployment Note
+
+If Streamlit Cloud attempts Poetry install and reports:
+"No file/folder found for package mf-rag-chatbot",
+this repo is configured to avoid root-package installation in Poetry (`package-mode = false`)
+and also includes a `requirements.txt` fallback for dependency installation.
+
 ## Live Groww Scraping Notes (Important)
 
 Groww may block automated/headless scraping (returns a 404 page to programmatic requests).  
