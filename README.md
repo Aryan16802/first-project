@@ -332,6 +332,26 @@ Open:
 
 - `http://127.0.0.1:8000`
 
+## Run on Streamlit
+
+Use Streamlit directly (no separate frontend server needed):
+
+```powershell
+cd C:\First Project
+python -m pip install -e .
+streamlit run streamlit_app.py
+```
+
+Open:
+
+- `http://localhost:8501`
+
+Notes:
+
+- Uses the same RAG pipeline and guardrails.
+- Loads `GROQ_API_KEY` and `GROQ_MODEL` from environment (or local `.env` file).
+- Keeps the same dark chat layout style with selected-funds panel and source/freshness metadata.
+
 ## Live Groww Scraping Notes (Important)
 
 Groww may block automated/headless scraping (returns a 404 page to programmatic requests).  
