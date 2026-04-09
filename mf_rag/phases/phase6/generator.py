@@ -53,6 +53,26 @@ def _build_deterministic_answer(context_packet: dict[str, Any]) -> str | None:
         hold_text = ", ".join(f"{h.get('security_name')} ({h.get('weight')}%)" for h in top)
         return f"Top holdings of {scheme}: {hold_text}."
 
+    if intent == "fund_manager":
+        managers = facts.get("fund_managers") or []
+        if not managers:
+            return None
+        return f"Fund manager(s) of {scheme}: {', '.join(str(m) for m in managers)}."
+
+    if intent == "lock_in":
+        lock_in = facts.get("lock_in_period_days")
+        if lock_in in (None, ""):
+            return None
+        if str(lock_in) == "0":
+            return f"{scheme} has no lock-in period (0 days)."
+        return f"Lock-in period of {scheme} is {lock_in} days."
+
+    if intent == "exit_load":
+        exit_load = facts.get("exit_load")
+        if exit_load in (None, ""):
+            return None
+        return f"Exit load of {scheme}: {exit_load}."
+
     return None
 
 

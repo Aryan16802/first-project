@@ -35,17 +35,24 @@ INTENT_TO_FIELDS: dict[str, set[str]] = {
 
 def _detect_intent(query: str) -> str:
     text = query.lower()
-    if ("aum" in text or "fund size" in text) and ("holding" in text or "portfolio" in text):
+    # Groww scheme titles may include this suffix, which can pollute intent words
+    # (e.g., "NAV" and "Portfolio" inside scheme name).
+    text = re.sub(r"\s*-\s*nav,\s*mutual fund performance\s*&\s*portfolio", "", text)
+    has_holdings_keyword = ("holding" in text) or ("holdings" in text) or ("portfolio holding" in text)
+    if ("aum" in text or "fund size" in text) and has_holdings_keyword:
         return "aum_holdings"
     if ("nav" in text) and ("minimum sip" in text or "min sip" in text or "sip" in text):
         return "nav_min_sip"
+    if "nav" in text:
+        return "nav"
     if "expense ratio" in text:
         return "expense_ratio"
     if "exit load" in text:
         return "exit_load"
     if "minimum sip" in text or "min sip" in text or "sip" in text:
         return "min_sip"
-    if "lock-in" in text or "lock in" in text or "elss" in text:
+    # "elss" appears in many scheme names and should not force lock-in intent.
+    if "lock-in" in text or "lock in" in text or ("elss" in text and "lock" in text):
         return "lock_in"
     if "riskometer" in text or "risk" in text:
         return "riskometer"
@@ -53,7 +60,7 @@ def _detect_intent(query: str) -> str:
         return "benchmark"
     if "aum" in text or "fund size" in text:
         return "aum"
-    if "holding" in text or "portfolio" in text:
+    if has_holdings_keyword:
         return "holdings"
     if "manager" in text:
         return "fund_manager"
@@ -141,6 +148,20 @@ class RetrievalPipeline:
         factual_context = dict(facts)
         factual_context["fund_managers"] = managers
         factual_context["portfolio_holdings"] = holdings
+        scheme_name_l = str(factual_context.get("scheme_name", "")).lower()
+        subcat_l = str(factual_context.get("subcategory") or "").lower()
+        is_elss = "elss" in scheme_name_l or subcat_l == "elss"
+
+        # For non-ELSS schemes, lock-in is effectively not applicable.
+        if intent == "lock_in" and factual_context.get("lock_in_period_days") in (None, "") and not is_elss:
+            factual_context["lock_in_period_days"] = 0
+
+        # If managers/exit-load are unavailable in indexed facts, return an explicit, grounded placeholder.
+        if intent == "fund_manager" and factual_context.get("fund_managers") in (None, [], ""):
+            factual_context["fund_managers"] = ["Not available in indexed source"]
+        if intent == "exit_load" and factual_context.get("exit_load") in (None, ""):
+            factual_context["exit_load"] = "Not available in indexed source"
+
         missing_count = sum(1 for field in required_fields if factual_context.get(field) in (None, "", []))
         confidence = 1.0 - (missing_count / max(1, len(required_fields)))
 

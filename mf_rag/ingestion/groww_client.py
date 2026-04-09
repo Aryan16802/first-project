@@ -287,6 +287,7 @@ class GrowwClient:
     def _extract_facts_from_rendered_html(html: str) -> dict[str, Any]:
         soup = BeautifulSoup(html, "html.parser")
         text = re.sub(r"\s+", " ", soup.get_text(" ", strip=True))
+        html_text = re.sub(r"\s+", " ", html)
 
         out: dict[str, Any] = {}
 
@@ -315,6 +316,9 @@ class GrowwClient:
                 r"Minimum SIP\s*[:\-]?\s*₹?\s*([0-9][0-9,]*)",
                 r"Min(?:imum)?\s*SIP\s*[:\-]?\s*₹?\s*([0-9][0-9,]*)",
                 r"SIP\s*starts?\s*at\s*₹?\s*([0-9][0-9,]*)",
+                r"Min(?:imum)?\s*investment\s*[:\-]?\s*₹?\s*([0-9][0-9,]*)",
+                r"minSIP\"?\s*[:=]\s*\"?([0-9][0-9,]*)",
+                r"minimumSIP\"?\s*[:=]\s*\"?([0-9][0-9,]*)",
             ]
         )
         out["nav_value"] = pick(
@@ -353,14 +357,32 @@ class GrowwClient:
             # Trim common trailing text from page sections.
             benchmark = re.split(r"Scheme Information Document|Fund house|Rank \(", benchmark, maxsplit=1)[0].strip()
         out["benchmark"] = benchmark
-        out["riskometer"] = pick([r"Risk\s*(Low|Moderately Low|Moderate|Moderately High|High|Very High)"])
-        exit_load = pick([r"Exit Load\s*[:\-]?\s*([A-Za-z0-9 \.\-\/%]+)"])
+        out["riskometer"] = pick(
+            [
+                r"Risk\s*(Low|Moderately Low|Moderate|Moderately High|High|Very High)",
+                r"(Low|Moderately Low|Moderate|Moderately High|High|Very High)\s+Risk",
+                r"riskometer\"?\s*[:=]\s*\"?(Low|Moderately Low|Moderate|Moderately High|High|Very High)",
+            ]
+        )
+        exit_load = pick(
+            [
+                r"Exit Load\s*[:\-]?\s*([A-Za-z0-9 \.\-\/%()]+)",
+                r"exitLoad\"?\s*[:=]\s*\"?([^\",}]{3,120})",
+            ]
+        )
         if exit_load and "fee payable" in exit_load.lower():
             exit_load = None
         out["exit_load"] = exit_load
-        manager = pick([r"Fund manager\s*[:\-]?\s*([A-Za-z\.\- ]{3,60})"])
+        manager = pick(
+            [
+                r"Fund manager[s]?\s*[:\-]?\s*([A-Za-z\.\-&, ]{3,140})",
+                r"fundManager[s]?\"?\s*[:=]\s*\"([^\"]{3,140})",
+            ]
+        )
         if manager:
-            out["fund_managers"] = [manager.strip()]
+            managers = [m.strip(" .,-") for m in re.split(r",| and ", manager) if m.strip(" .,-")]
+            if managers:
+                out["fund_managers"] = managers[:4]
 
         # Parse top holdings from the holdings table rows.
         holdings: list[dict[str, Any]] = []
@@ -385,6 +407,59 @@ class GrowwClient:
                 break
         if holdings:
             out["portfolio_holdings"] = holdings
+        else:
+            # Fallback for page variants where holdings rows use different class names.
+            seen: set[str] = set()
+            for node in soup.select("tr, li, div"):
+                row_text = " ".join(node.stripped_strings)
+                m = re.search(r"([A-Za-z0-9&\.\- ]{3,80})\s+([0-9]+(?:\.[0-9]+)?)%", row_text)
+                if not m:
+                    continue
+                name = " ".join(m.group(1).split())
+                if name.lower().startswith(("top ", "holding", "sector")):
+                    continue
+                if name in seen:
+                    continue
+                seen.add(name)
+                holdings.append(
+                    {
+                        "security_name": name,
+                        "sector": None,
+                        "weight": m.group(2),
+                        "as_of_date": as_of_date,
+                    }
+                )
+                if len(holdings) >= 10:
+                    break
+            if holdings:
+                out["portfolio_holdings"] = holdings
+
+        # JSON-in-HTML fallbacks for fields often hidden from visible text.
+        if not out.get("min_sip"):
+            m = re.search(r'"(?:minSIP|minimumSIP|minSip)"\s*:\s*"?([0-9][0-9,]*)', html_text, flags=re.IGNORECASE)
+            if m:
+                out["min_sip"] = m.group(1)
+        if not out.get("riskometer"):
+            m = re.search(
+                r'"(?:riskometer|riskLevel|risk)"\s*:\s*"?(Low|Moderately Low|Moderate|Moderately High|High|Very High)"?',
+                html_text,
+                flags=re.IGNORECASE,
+            )
+            if m:
+                out["riskometer"] = m.group(1)
+        if not out.get("exit_load"):
+            m = re.search(r'"(?:exitLoad|exit_load)"\s*:\s*"([^"]{3,120})"', html_text, flags=re.IGNORECASE)
+            if m:
+                out["exit_load"] = m.group(1).strip()
+        if not out.get("fund_managers"):
+            matches = re.findall(r'"(?:fundManager|managerName|name)"\s*:\s*"([A-Za-z][A-Za-z\.\- ]{2,60})"', html_text)
+            filtered = [x.strip() for x in matches if "fund" not in x.lower() and "direct growth" not in x.lower()]
+            if filtered:
+                uniq: list[str] = []
+                for x in filtered:
+                    if x not in uniq:
+                        uniq.append(x)
+                out["fund_managers"] = uniq[:4]
 
         # Remove empty entries
         return {k: v for k, v in out.items() if v not in (None, "")}

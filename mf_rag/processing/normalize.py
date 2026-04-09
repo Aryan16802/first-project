@@ -110,7 +110,10 @@ def normalize_scheme_record(raw: dict[str, Any], ingestion_run_id: str, version:
         lock_in_period_days = int(lock_in_period_days.strip())
 
     # ELSS business rule: enforce a 3-year lock-in if missing.
-    if subcategory_str and subcategory_str.lower() == "elss" and not lock_in_period_days:
+    is_elss = bool(subcategory_str and subcategory_str.lower() == "elss") or (
+        "elss" in str(raw.get("scheme_name", "")).lower()
+    )
+    if is_elss and not lock_in_period_days:
         lock_in_period_days = 1095
         quality_flags.append("derived_elss_lock_in")
 

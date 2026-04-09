@@ -97,3 +97,25 @@ def test_phase5_supports_aum_and_holdings_intent(tmp_path: Path) -> None:
     pipeline = RetrievalPipeline(structured_store=structured, vector_store=vector)
     result = pipeline.run("What are AUM and holdings of INF0001?")
     assert result.reason in {"grounded_context_ready", "low_confidence_context"}
+
+
+def test_phase5_nav_query_not_overridden_by_portfolio_word_in_scheme_name(tmp_path: Path) -> None:
+    structured, vector = _seed_store(tmp_path)
+    pipeline = RetrievalPipeline(structured_store=structured, vector_store=vector)
+    # "portfolio" in scheme suffix should not force holdings intent.
+    result = pipeline.run("What is NAV of Axis ELSS Tax Saver Fund - NAV, Mutual Fund Performance & Portfolio?")
+    assert result.context_packet.get("intent") == "nav"
+
+
+def test_phase5_benchmark_query_not_overridden_by_elss_in_scheme_name(tmp_path: Path) -> None:
+    structured, vector = _seed_store(tmp_path)
+    pipeline = RetrievalPipeline(structured_store=structured, vector_store=vector)
+    result = pipeline.run("What is benchmark of Axis ELSS Tax Saver Fund?")
+    assert result.context_packet.get("intent") == "benchmark"
+
+
+def test_phase5_min_sip_query_not_overridden_by_nav_in_scheme_suffix(tmp_path: Path) -> None:
+    structured, vector = _seed_store(tmp_path)
+    pipeline = RetrievalPipeline(structured_store=structured, vector_store=vector)
+    result = pipeline.run("What is the minimum SIP of Axis ELSS Tax Saver Fund - NAV, Mutual Fund Performance & Portfolio?")
+    assert result.context_packet.get("intent") == "min_sip"

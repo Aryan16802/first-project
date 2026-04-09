@@ -1,0 +1,834 @@
+{
+  "schemes": [
+    {
+      "amc_name": "Unknown AMC",
+      "aum_date": "08 Apr 2026",
+      "aum_value": "3,66,904.00 Cr",
+      "benchmark": "NIFTY 500 Total Return Index",
+      "category": "Unknown",
+      "exit_load": "Nil",
+      "expense_ratio": "0.84",
+      "fund_managers": [],
+      "lock_in_period_days": null,
+      "min_sip": "500",
+      "nav_date": "08 Apr 2026",
+      "nav_value": "103.28",
+      "portfolio_holdings": [
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "075.78 Cr Expense ratio",
+          "weight": "0.84"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Expense ratio",
+          "weight": "0.84"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Name Sector Instruments Assets ICICI Bank Ltd. Financial Equity",
+          "weight": "7.31"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "ICICI Bank Ltd. Financial Equity",
+          "weight": "7.31"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "HDFC Bank Ltd. Financial Equity",
+          "weight": "6.54"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Bharti Airtel Ltd. Communication Equity",
+          "weight": "3.71"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Infosys Ltd. Technology Equity",
+          "weight": "3.38"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Bajaj Finance Ltd. Financial Equity",
+          "weight": "3.34"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "State Bank of India Financial Equity",
+          "weight": "2.99"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Larsen & Toubro Ltd. Construction Equity",
+          "weight": "2.97"
+        }
+      ],
+      "riskometer": "Very High",
+      "scheme_id": "groww_f45b8a14f826",
+      "scheme_name": "Axis ELSS Tax Saver Direct Plan Growth - NAV, Mutual Fund Performance & Portfolio",
+      "source_timestamp": "2026-04-09T09:37:17.037502+00:00",
+      "source_url": "https://groww.in/mutual-funds/axis-long-term-equity-fund-direct-growth",
+      "subcategory": null,
+      "version": "v_live"
+    },
+    {
+      "amc_name": "Unknown AMC",
+      "aum_date": "08 Apr 2026",
+      "aum_value": "1,53,808.32 Cr",
+      "benchmark": "NIFTY 500 Total Return Index",
+      "category": "Unknown",
+      "exit_load": null,
+      "expense_ratio": "0.62",
+      "fund_managers": [],
+      "lock_in_period_days": null,
+      "min_sip": "1,000",
+      "nav_date": "08 Apr 2026",
+      "nav_value": "90.13",
+      "portfolio_holdings": [
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "253.17 Cr Expense ratio",
+          "weight": "0.62"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Expense ratio",
+          "weight": "0.62"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Name Sector Instruments Assets HDFC Bank Ltd. Financial Equity",
+          "weight": "7.73"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "HDFC Bank Ltd. Financial Equity",
+          "weight": "7.73"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Power Grid Corporation Of India Ltd. Energy Equity",
+          "weight": "6.92"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Coal India Ltd. Energy Equity",
+          "weight": "5.18"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "ICICI Bank Ltd. Financial Equity",
+          "weight": "5.07"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "ITC Ltd. Consumer Staples Equity",
+          "weight": "5.04"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Bajaj Holdings & Investment Ltd. Financial Equity",
+          "weight": "4.85"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Alphabet Inc Class A Services Forgn. Eq",
+          "weight": "3.99"
+        }
+      ],
+      "riskometer": "Very High",
+      "scheme_id": "groww_ef0fe797d085",
+      "scheme_name": "Parag Parikh Flexi Cap Fund Direct Growth - NAV, Mutual Fund Performance & Portfolio",
+      "source_timestamp": "2026-04-09T09:37:17.236576+00:00",
+      "source_url": "https://groww.in/mutual-funds/parag-parikh-long-term-value-fund-direct-growth",
+      "subcategory": null,
+      "version": "v_live"
+    },
+    {
+      "amc_name": "Unknown AMC",
+      "aum_date": "08 Apr 2026",
+      "aum_value": "12,68,212.64 Cr",
+      "benchmark": "BSE 250 SmallCap Total Return Index",
+      "category": "Unknown",
+      "exit_load": "Exit load of 1% if redeemed within 1 year",
+      "expense_ratio": "0.79",
+      "fund_managers": [],
+      "lock_in_period_days": null,
+      "min_sip": "500",
+      "nav_date": "08 Apr 2026",
+      "nav_value": "180.58",
+      "portfolio_holdings": [
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "931.73 Cr Expense ratio",
+          "weight": "0.79"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Expense ratio",
+          "weight": "0.79"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Name Sector Instruments Assets Ather Energy Ltd. Automobile Equity",
+          "weight": "4.09"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Ather Energy Ltd. Automobile Equity",
+          "weight": "4.09"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "City Union Bank Ltd. Financial Equity",
+          "weight": "3.21"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "ZF Commercial Vehicle Control Systems India Ltd. Automobile Equity",
+          "weight": "3.04"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Kalpataru Projects International Ltd. Capital Goods Equity",
+          "weight": "2.80"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Navin Fluorine International Ltd. Chemicals Equity",
+          "weight": "2.69"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Krishna Institute of Medical Sciences Ltd Healthcare Equity",
+          "weight": "2.63"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "SBFC Finance Ltd. Financial Equity",
+          "weight": "2.38"
+        }
+      ],
+      "riskometer": "Very High",
+      "scheme_id": "groww_aa7cbd5e6214",
+      "scheme_name": "SBI Small Cap Fund Direct Growth - NAV, Mutual Fund Performance & Portfolio",
+      "source_timestamp": "2026-04-09T09:37:17.491503+00:00",
+      "source_url": "https://groww.in/mutual-funds/sbi-small-midcap-fund-direct-growth",
+      "subcategory": null,
+      "version": "v_live"
+    },
+    {
+      "amc_name": "Unknown AMC",
+      "aum_date": "08 Apr 2026",
+      "aum_value": "11,24,266.03 Cr",
+      "benchmark": "NIFTY 100 Total Return Index",
+      "category": "Unknown",
+      "exit_load": "Exit load of 1%, if redeemed within 1 month.",
+      "expense_ratio": "0.87",
+      "fund_managers": [],
+      "lock_in_period_days": null,
+      "min_sip": "100",
+      "nav_date": "08 Apr 2026",
+      "nav_value": "117.83",
+      "portfolio_holdings": [
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "451.59 Cr Expense ratio",
+          "weight": "0.87"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Expense ratio",
+          "weight": "0.87"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Name Sector Instruments Assets ICICI Bank Ltd. Financial Equity",
+          "weight": "9.42"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "ICICI Bank Ltd. Financial Equity",
+          "weight": "9.42"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "HDFC Bank Ltd. Financial Equity",
+          "weight": "9.16"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Larsen & Toubro Ltd. Construction Equity",
+          "weight": "6.34"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Reliance Industries Ltd. Energy Equity",
+          "weight": "5.98"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Axis Bank Ltd. Financial Equity",
+          "weight": "4.61"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Bharti Airtel Ltd. Communication Equity",
+          "weight": "4.11"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Maruti Suzuki India Ltd. Automobile Equity",
+          "weight": "3.89"
+        }
+      ],
+      "riskometer": "Very High",
+      "scheme_id": "groww_fc22d1382a07",
+      "scheme_name": "ICICI Prudential Large Cap Fund Direct Growth - NAV, Mutual Fund Performance & Portfolio",
+      "source_timestamp": "2026-04-09T09:37:17.905451+00:00",
+      "source_url": "https://groww.in/mutual-funds/icici-prudential-focused-bluechip-equity-fund-direct-growth",
+      "subcategory": null,
+      "version": "v_live"
+    },
+    {
+      "amc_name": "Unknown AMC",
+      "aum_date": "08 Apr 2026",
+      "aum_value": "2,24,201.22 Cr",
+      "benchmark": "NIFTY 100 Total Return Index",
+      "category": "Unknown",
+      "exit_load": "Exit load of 1% if redeemed within 1 year",
+      "expense_ratio": "0.58",
+      "fund_managers": [],
+      "lock_in_period_days": null,
+      "min_sip": "99",
+      "nav_date": "08 Apr 2026",
+      "nav_value": "122.40",
+      "portfolio_holdings": [
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "184.41 Cr Expense ratio",
+          "weight": "0.58"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Expense ratio",
+          "weight": "0.58"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Name Sector Instruments Assets HDFC Bank Ltd. Financial Equity",
+          "weight": "9.54"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "HDFC Bank Ltd. Financial Equity",
+          "weight": "9.54"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "ICICI Bank Ltd. Financial Equity",
+          "weight": "8.49"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Reliance Industries Ltd. Energy Equity",
+          "weight": "4.99"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Bharti Airtel Ltd. Communication Equity",
+          "weight": "4.55"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Infosys Ltd. Technology Equity",
+          "weight": "4.28"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Larsen & Toubro Ltd. Construction Equity",
+          "weight": "3.99"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "State Bank of India Financial Equity",
+          "weight": "3.66"
+        }
+      ],
+      "riskometer": "Very High",
+      "scheme_id": "groww_856090e5cdf1",
+      "scheme_name": "Mirae Asset Large Cap Fund Direct Growth - NAV, Mutual Fund Performance & Portfolio",
+      "source_timestamp": "2026-04-09T09:37:18.227409+00:00",
+      "source_url": "https://groww.in/mutual-funds/mirae-asset-large-cap-fund-direct-growth",
+      "subcategory": null,
+      "version": "v_live"
+    },
+    {
+      "amc_name": "Unknown AMC",
+      "aum_date": "08 Apr 2026",
+      "aum_value": "5,95,413.81 Cr",
+      "benchmark": "NIFTY Midcap 150 Total Return Index",
+      "category": "Unknown",
+      "exit_load": "Exit load for units in excess of 10% of the investment,1% will be charged for redemption within 365 days",
+      "expense_ratio": "0.38",
+      "fund_managers": [],
+      "lock_in_period_days": null,
+      "min_sip": "100",
+      "nav_date": "08 Apr 2026",
+      "nav_value": "152.34",
+      "portfolio_holdings": [
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "694.40 Cr Expense ratio",
+          "weight": "0.38"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Expense ratio",
+          "weight": "0.38"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Name Sector Instruments Assets GE Vernova T&D India Ltd Capital Goods Equity",
+          "weight": "5.08"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "GE Vernova T&D India Ltd Capital Goods Equity",
+          "weight": "5.08"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Fortis Healthcare Ltd. Healthcare Equity",
+          "weight": "4.25"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Ipca Laboratories Ltd. Healthcare Equity",
+          "weight": "2.98"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Kei Industries Ltd. Capital Goods Equity",
+          "weight": "2.90"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Mphasis Ltd. Technology Equity",
+          "weight": "2.89"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Indian Bank Financial Equity",
+          "weight": "2.80"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Bharat Electronics Ltd. Capital Goods Equity",
+          "weight": "2.42"
+        }
+      ],
+      "riskometer": "Very High",
+      "scheme_id": "groww_49f70e9a65ce",
+      "scheme_name": "Kotak Midcap Fund Direct Growth - NAV, Mutual Fund Performance & Portfolio",
+      "source_timestamp": "2026-04-09T09:37:18.399182+00:00",
+      "source_url": "https://groww.in/mutual-funds/kotak-emerging-equity-scheme-direct-growth",
+      "subcategory": null,
+      "version": "v_live"
+    },
+    {
+      "amc_name": "Unknown AMC",
+      "aum_date": "08 Apr 2026",
+      "aum_value": "9,52,319.77 Cr",
+      "benchmark": "NIFTY 50 Hybrid Composite Debt 50",
+      "category": "Unknown",
+      "exit_load": "Exit Load for units in excess of 15% of the investment,1% will be charged for redemption within 1 year.",
+      "expense_ratio": "0.75",
+      "fund_managers": [],
+      "lock_in_period_days": null,
+      "min_sip": "100",
+      "nav_date": "08 Apr 2026",
+      "nav_value": "553.09",
+      "portfolio_holdings": [
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "589.67 Cr Expense ratio",
+          "weight": "0.75"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Expense ratio",
+          "weight": "0.75"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Name Sector Instruments Assets ICICI Bank Ltd. Financial Equity",
+          "weight": "4.77"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "ICICI Bank Ltd. Financial Equity",
+          "weight": "4.77"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "HDFC Bank Ltd. Financial Equity",
+          "weight": "4.50"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "State Bank of India Financial Equity",
+          "weight": "3.91"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Reliance Industries Ltd. Energy Equity",
+          "weight": "3.75"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Bharti Airtel Ltd. Communication Equity",
+          "weight": "2.82"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Larsen & Toubro Ltd. Construction Equity",
+          "weight": "2.62"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Axis Bank Ltd. Financial Equity",
+          "weight": "2.55"
+        }
+      ],
+      "riskometer": "Very High",
+      "scheme_id": "groww_a59fde1656d2",
+      "scheme_name": "HDFC Balanced Advantage Fund Direct Growth - NAV, Mutual Fund Performance & Portfolio",
+      "source_timestamp": "2026-04-09T09:37:18.781703+00:00",
+      "source_url": "https://groww.in/mutual-funds/hdfc-balanced-advantage-fund-direct-growth",
+      "subcategory": null,
+      "version": "v_live"
+    },
+    {
+      "amc_name": "Unknown AMC",
+      "aum_date": "08 Apr 2026",
+      "aum_value": "88,795.89 Cr",
+      "benchmark": "NIFTY Smallcap 250 Total Return Index",
+      "category": "Unknown",
+      "exit_load": "Exit load of 1% if redeemed within 1 year",
+      "expense_ratio": "0.83",
+      "fund_managers": [],
+      "lock_in_period_days": null,
+      "min_sip": "1,000",
+      "nav_date": "08 Apr 2026",
+      "nav_value": "259.93",
+      "portfolio_holdings": [
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "653.65 Cr Expense ratio",
+          "weight": "0.83"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Expense ratio",
+          "weight": "0.83"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Name Sector Instruments Assets Reliance Industries Ltd. Energy Equity",
+          "weight": "9.36"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Reliance Industries Ltd. Energy Equity",
+          "weight": "9.36"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "RBL Bank Ltd. Financial Equity",
+          "weight": "4.38"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Sun TV Network Ltd. Services Equity",
+          "weight": "3.43"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Adani Power Ltd. Energy Equity",
+          "weight": "3.06"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "JIO Financial Services Ltd. Financial Equity",
+          "weight": "2.85"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Piramal Finance Ltd. Financial Equity",
+          "weight": "2.73"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Aster DM Healthcare Ltd. Healthcare Equity",
+          "weight": "2.68"
+        }
+      ],
+      "riskometer": "Very High",
+      "scheme_id": "groww_6afdcbc92a79",
+      "scheme_name": "Quant Small Cap Fund Direct Plan Growth - NAV, Mutual Fund Performance & Portfolio",
+      "source_timestamp": "2026-04-09T09:37:19.107661+00:00",
+      "source_url": "https://groww.in/mutual-funds/quant-small-cap-fund-direct-plan-growth",
+      "subcategory": null,
+      "version": "v_live"
+    },
+    {
+      "amc_name": "Unknown AMC",
+      "aum_date": "08 Apr 2026",
+      "aum_value": "3,96,376.13 Cr",
+      "benchmark": "NIFTY 50 Total Return Index",
+      "category": "Unknown",
+      "exit_load": "Nil",
+      "expense_ratio": "0.20",
+      "fund_managers": [],
+      "lock_in_period_days": null,
+      "min_sip": "500",
+      "nav_date": "08 Apr 2026",
+      "nav_value": "167.75",
+      "portfolio_holdings": [
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "433.24 Cr Expense ratio",
+          "weight": "0.20"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Expense ratio",
+          "weight": "0.20"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Name Sector Instruments Assets HDFC Bank Ltd. Financial Equity",
+          "weight": "11.83"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "HDFC Bank Ltd. Financial Equity",
+          "weight": "11.83"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "ICICI Bank Ltd. Financial Equity",
+          "weight": "8.58"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Reliance Industries Ltd. Energy Equity",
+          "weight": "8.20"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Bharti Airtel Ltd. Communication Equity",
+          "weight": "4.56"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Larsen & Toubro Ltd. Construction Equity",
+          "weight": "4.38"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "State Bank of India Financial Equity",
+          "weight": "4.34"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Infosys Ltd. Technology Equity",
+          "weight": "3.97"
+        }
+      ],
+      "riskometer": "Very High",
+      "scheme_id": "groww_92392ed4ebf2",
+      "scheme_name": "UTI Nifty 50 Index Fund Direct Growth - NAV, Mutual Fund Performance & Portfolio",
+      "source_timestamp": "2026-04-09T09:37:19.367380+00:00",
+      "source_url": "https://groww.in/mutual-funds/uti-nifty-fund-direct-growth",
+      "subcategory": null,
+      "version": "v_live"
+    },
+    {
+      "amc_name": "Unknown AMC",
+      "aum_date": "08 Apr 2026",
+      "aum_value": "4,35,493.48 Cr",
+      "benchmark": "NIFTY 500 Total Return Index",
+      "category": "Unknown",
+      "exit_load": "Nil",
+      "expense_ratio": "0.98",
+      "fund_managers": [],
+      "lock_in_period_days": null,
+      "min_sip": "500",
+      "nav_date": "08 Apr 2026",
+      "nav_value": "65.80",
+      "portfolio_holdings": [
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "787.81 Cr Expense ratio",
+          "weight": "0.98"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Expense ratio",
+          "weight": "0.98"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Name Sector Instruments Assets ICICI Bank Ltd. Financial Equity",
+          "weight": "7.22"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "ICICI Bank Ltd. Financial Equity",
+          "weight": "7.22"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "HDFC Bank Ltd. Financial Equity",
+          "weight": "6.93"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Axis Bank Ltd. Financial Equity",
+          "weight": "4.74"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "State Bank of India Financial Equity",
+          "weight": "4.47"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Infosys Ltd. Technology Equity",
+          "weight": "4.47"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Reliance Industries Ltd. Energy Equity",
+          "weight": "4.02"
+        },
+        {
+          "as_of_date": "08 Apr 2026",
+          "sector": null,
+          "security_name": "Bharti Airtel Ltd. Communication Equity",
+          "weight": "3.38"
+        }
+      ],
+      "riskometer": "Very High",
+      "scheme_id": "groww_a1f468d8b6e6",
+      "scheme_name": "Aditya Birla Sun Life ELSS Tax Saver Direct Growth - NAV, Mutual Fund Performance & Portfolio",
+      "source_timestamp": "2026-04-09T09:37:20.357512+00:00",
+      "source_url": "https://groww.in/mutual-funds/birla-sun-life-tax-relief-96-direct-growth",
+      "subcategory": null,
+      "version": "v_live"
+    }
+  ]
+}
