@@ -24,6 +24,13 @@ def _load_local_env() -> None:
             continue
         k, v = line.split("=", 1)
         os.environ.setdefault(k.strip(), v.strip())
+    try:
+        for key in ("GROQ_API_KEY", "GROQ_MODEL", "GROQ_TEMPERATURE", "GROQ_MAX_TOKENS"):
+            if key in st.secrets and str(st.secrets[key]).strip():
+                os.environ.setdefault(key, str(st.secrets[key]).strip())
+    except Exception:
+        # Secrets are optional in local/dev runs.
+        pass
 
 
 @st.cache_resource
