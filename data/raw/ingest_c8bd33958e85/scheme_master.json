@@ -1,0 +1,36 @@
+{
+  "schemes": [
+    {
+      "amc_name": "Axis Mutual Fund",
+      "aum_date": "2026-03-31",
+      "aum_value": "35600000000",
+      "benchmark": "NIFTY 500 TRI",
+      "category": "Equity",
+      "exit_load": "Nil",
+      "expense_ratio": "1.62",
+      "fund_managers": [
+        "Manager A",
+        "Manager B"
+      ],
+      "lock_in_period_days": 1095,
+      "min_sip": "500",
+      "nav_date": "2026-04-07",
+      "nav_value": "87.13",
+      "portfolio_holdings": [
+        {
+          "as_of_date": "2026-03-31",
+          "sector": "Financials",
+          "security_name": "HDFC Bank",
+          "weight": "7.10"
+        }
+      ],
+      "riskometer": "Very High",
+      "scheme_id": "INF0001",
+      "scheme_name": "Axis ELSS Tax Saver Fund",
+      "source_timestamp": "2026-04-08T07:00:00+00:00",
+      "source_url": "https://groww.in/mutual-funds/axis-elss-tax-saver-fund",
+      "subcategory": "ELSS",
+      "version": "v1"
+    }
+  ]
+}

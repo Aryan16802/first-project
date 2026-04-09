@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mutual Fund RAG Chatbot</title>
+  <style>
+    :root { color-scheme: dark; }
+    body { margin: 0; font-family: Inter, Segoe UI, Arial, sans-serif; background: #0b1020; color: #e9ecf5; }
+    .container { max-width: 1050px; margin: 20px auto; padding: 16px; }
+    .card { background: #141b2d; border: 1px solid #26314f; border-radius: 12px; padding: 14px; }
+    .title { font-size: 22px; margin: 0 0 4px; }
+    .sub { color: #9fb0d8; margin: 0 0 14px; }
+    .grid { display: grid; grid-template-columns: 1fr 330px; gap: 14px; }
+    .chatbox { height: 460px; overflow-y: auto; background: #0f1628; border: 1px solid #2c395c; border-radius: 10px; padding: 12px; }
+    .msg { margin: 10px 0; padding: 10px; border-radius: 10px; white-space: pre-wrap; }
+    .user { background: #1f2c4b; border: 1px solid #304777; }
+    .bot { background: #15243d; border: 1px solid #2d4f7a; }
+    .meta { margin-top: 6px; font-size: 12px; color: #9fb0d8; }
+    .controls { margin-top: 10px; display: flex; gap: 8px; }
+    input, button, select, textarea { border-radius: 8px; border: 1px solid #33456f; background: #0f1628; color: #e9ecf5; }
+    textarea { width: 100%; min-height: 78px; resize: vertical; padding: 10px; }
+    button { padding: 10px 14px; cursor: pointer; background: #2e5ad7; border: none; }
+    button:hover { background: #3a68ea; }
+    .secondary { background: #1a2947; border: 1px solid #314d84; }
+    .fund-list { max-height: 560px; overflow-y: auto; }
+    .fund { padding: 9px; margin: 8px 0; background: #0f1628; border: 1px solid #2c395c; border-radius: 8px; }
+    .fund a { color: #8fc1ff; text-decoration: none; word-break: break-all; }
+    .status { font-size: 12px; color: #9fb0d8; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1 class="title">Mutual Fund RAG Chatbot</h1>
+      <p class="sub">Ask scheme-level questions. Responses are grounded in indexed Groww sources.</p>
+      <div class="grid">
+        <section>
+          <div id="chatbox" class="chatbox"></div>
+          <div class="controls">
+            <textarea id="query" placeholder="Example: What is the NAV of Axis ELSS Tax Saver Fund?"></textarea>
+          </div>
+          <div class="controls">
+            <button id="sendBtn">Send</button>
+            <button id="clearBtn" class="secondary">Clear Chat</button>
+          </div>
+          <div id="status" class="status"></div>
+        </section>
+        <aside class="card fund-list">
+          <strong>10 Selected Funds (Groww)</strong>
+          <div id="funds"></div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const chatbox = document.getElementById("chatbox");
+    const queryInput = document.getElementById("query");
+    const sendBtn = document.getElementById("sendBtn");
+    const clearBtn = document.getElementById("clearBtn");
+    const statusEl = document.getElementById("status");
+    const fundsEl = document.getElementById("funds");
+
+    function addMessage(text, role, meta = null) {
+      const div = document.createElement("div");
+      div.className = "msg " + role;
+      div.textContent = text;
+      if (meta) {
+        const m = document.createElement("div");
+        m.className = "meta";
+        m.textContent = meta;
+        div.appendChild(m);
+      }
+      chatbox.appendChild(div);
+      chatbox.scrollTop = chatbox.scrollHeight;
+    }
+
+    async function loadFunds() {
+      const r = await fetch("/funds");
+      const data = await r.json();
+      fundsEl.innerHTML = "";
+      for (const url of data.fund_urls || []) {
+        const item = document.createElement("div");
+        item.className = "fund";
+        const name = url.split("/").pop().replaceAll("-", " ");
+        item.innerHTML = "<div><strong>" + name + "</strong></div><a href='" + url + "' target='_blank'>" + url + "</a>";
+        item.onclick = () => {
+          queryInput.value = "What is the latest NAV of " + name + "?";
+          queryInput.focus();
+        };
+        fundsEl.appendChild(item);
+      }
+    }
+
+    async function sendQuery() {
+      const query = queryInput.value.trim();
+      if (!query) return;
+      addMessage(query, "user");
+      queryInput.value = "";
+      statusEl.textContent = "Fetching grounded response...";
+      try {
+        const r = await fetch("/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ query })
+        });
+        const data = await r.json();
+        const source = data?.citations?.source_url ? ("Source: " + data.citations.source_url) : "Source: n/a";
+        const freshness = data?.freshness?.status ? (" | Freshness: " + data.freshness.status) : "";
+        addMessage(data.answer || "No response", "bot", source + freshness);
+        statusEl.textContent = "Done";
+      } catch (e) {
+        addMessage("Request failed. Check server logs.", "bot");
+        statusEl.textContent = "Failed";
+      }
+    }
+
+    sendBtn.onclick = sendQuery;
+    clearBtn.onclick = () => { chatbox.innerHTML = ""; statusEl.textContent = ""; };
+    queryInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" && !e.shiftKey) {
+        e.preventDefault();
+        sendQuery();
+      }
+    });
+
+    loadFunds();
+    addMessage("Ready. Ask about any of the listed mutual funds.", "bot");
+  </script>
+</body>
+</html>
